@@ -1,0 +1,18 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: cart
+spec:
+  type: state.mongodb
+  version: v1
+  metadata:
+    - name: host
+      value: localhost:27017
+    - name: username
+      value: dapr
+    - name: password
+      value: daprPassword 
+    - name: databaseName
+      value: admin 
+    - name: collectionName
+      value: cart 

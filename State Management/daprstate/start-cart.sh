@@ -1,0 +1,1 @@
+dapr run --app-id "cart-service" --app-port "5001" --dapr-grpc-port "50010" --dapr-http-port "5010" --components-path "./components" -- dotnet run --project ./ShoppingCart.csproj --urls="http://+:5003"
