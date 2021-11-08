@@ -20,8 +20,8 @@ namespace ShoppingCart.Activities.Cart
         }
         [HttpGet]
         [SwaggerOperation(
-            Summary = "Retrieve a sample response by id ",
-            Description = "Retrieves a sample response ",
+            Summary = "Retrieve items in a shopping cart for session Id",
+            Description = "Items in a shopping cart for a user with a session id",
             OperationId = "EF0A3653-153F-4E73-8D20-621C9F9FFDC9",
             Tags = new[] {Routes.Cart})
         ]

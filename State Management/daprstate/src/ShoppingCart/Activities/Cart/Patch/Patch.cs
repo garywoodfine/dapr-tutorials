@@ -16,15 +16,16 @@ namespace ShoppingCart.Activities.Cart.Patch
         {
             _mediator = mediator;
         }
-        
+
         [HttpPatch]
         [SwaggerOperation(
-            Summary = "Update a draft import application",
-            Description = "Update a draft import application",
+            Summary = "Update items in a shopping cart",
+            Description = "Update items in a shopping cart for a user with session id",
             OperationId = "3E520260-2CB4-462A-BA04-C2F7CFAB1EEE",
-            Tags = new[] {Routes.Cart})
+            Tags = new[] { Routes.Cart })
         ]
-        public override async Task<ActionResult<Response>> HandleAsync([FromRoute]Command request, CancellationToken cancellationToken = new CancellationToken())
+        public override async Task<ActionResult<Response>> HandleAsync([FromRoute] Command request,
+            CancellationToken cancellationToken = new CancellationToken())
         {
             var response = await _mediator.Send(request, cancellationToken);
             return new OkObjectResult(response);

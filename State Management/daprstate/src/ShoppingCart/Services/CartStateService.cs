@@ -23,8 +23,7 @@ namespace ShoppingCart.Content.Activities.Cart.Post
         {
             var currentItems = await Get(session);
             items.ApplyTo(currentItems);
-            Save(session, currentItems);
-            
+            await Save(session, currentItems);
             return currentItems;
         }
 

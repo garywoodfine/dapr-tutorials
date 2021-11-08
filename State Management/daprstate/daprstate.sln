@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.6.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{38813098-174E-4047-A485-F7B8742E1E54}"
+ProjectSection(SolutionItems) = preProject
+	src\Post.http = src\Post.http
+	src\Patch.http = src\Patch.http
+	src\Get.http = src\Get.http
+EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCart", "src\ShoppingCart\ShoppingCart.csproj", "{FD2D1249-D36D-4ABB-9D27-E4933D4B7974}"
 EndProject

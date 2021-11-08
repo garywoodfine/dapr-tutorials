@@ -33,7 +33,7 @@ namespace ShoppingCart
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "ShoppingCart", Version = "v1"});
                 c.CustomSchemaIds(x => x.FullName);
                 c.EnableAnnotations();
-                c.DocumentFilter<JsonPatchDocumentFilter>();
+               c.DocumentFilter<JsonPatchDocumentFilter>();
             });
             services.AddTransient<ExceptionHandlingMiddleware>();
             services.AddMediatR(typeof(Startup))

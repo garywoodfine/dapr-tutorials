@@ -1,0 +1,4 @@
+# Get Cart Item
+GET http://localhost:5001/cart
+accept: application/json
+x-session-id: 3E520260-2CB4-462A-BA04-C2F7CFAB1EFE

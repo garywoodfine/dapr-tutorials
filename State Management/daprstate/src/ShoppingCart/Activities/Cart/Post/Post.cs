@@ -2,7 +2,6 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Ardalis.ApiEndpoints;
-using ShoppingCart.Activities.Sample.Get;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -21,12 +20,11 @@ namespace ShoppingCart.Content.Activities.Cart.Post
             _mediator = mediator;
         }
         
-        
         [HttpPost]
         [SwaggerOperation(
-            Summary = "Retrieve an article by id ",
-            Description = "Retrieves a full articles ",
-            OperationId = "EF0A3653-153F-4E73-8D20-621C9F9FFDC9",
+            Summary = "Create a shopping cart for a user",
+            Description = "Create a shopping cart for a user",
+            OperationId = "4D730510-3399-4324-BB2D-0A6C7270F783",
             Tags = new[] {Routes.Cart})
         ]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(Response))]
