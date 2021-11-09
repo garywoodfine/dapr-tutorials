@@ -1,6 +1,6 @@
-PATCH http://localhost:5001/cart
+PATCH http://{{host-url}}/cart
 accept: text/plain
-x-session-id: 9E520260-2CB4-462A-BA04-C2F7CFAB1EFE
+x-session-id: {{session-id}}
 Content-Type: application/json-patch+json
 
 [

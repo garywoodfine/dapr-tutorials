@@ -2,3 +2,9 @@
 GET http://{{host-url}}/cart
 accept: application/json
 x-session-id: {{session-id}}
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
