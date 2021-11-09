@@ -1,4 +1,3 @@
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
@@ -8,15 +7,15 @@ namespace ShoppingCart.Content.Activities.Cart.Post
 {
     public class Handler: IRequestHandler<Command, Response>
     {
-        private readonly IService<Item> _articleService;
+        private readonly IService<Item> _cartService;
 
-        public Handler(IService<Item> articleService)
+        public Handler(IService<Item> cartService)
         {
-            _articleService = articleService;
+            _cartService = cartService;
         }
         public async Task<Response> Handle(Command request, CancellationToken cancellationToken)
         {
-            await _articleService.Save(request.Session, request.Items);
+            await _cartService.Save(request.Session, request.Items);
             return new Response { Items = request.Items };
         }
     }

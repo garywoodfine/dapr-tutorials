@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Dapr.Client;
 using Microsoft.AspNetCore.JsonPatch;
@@ -18,7 +16,6 @@ namespace ShoppingCart.Content.Activities.Cart.Post
             _client = client;
         }
 
-
         public async Task<List<Item>> Update(string session, JsonPatchDocument<List<Item>> items)
         {
             var currentItems = await Get(session);
@@ -34,7 +31,7 @@ namespace ShoppingCart.Content.Activities.Cart.Post
 
        public async Task<List<Item>>Get(string session)
        {
-           return  await _client.GetStateAsync<List<Item>>(DAPR_STORE_NAME, session);
+           return  await _client.GetStateAsync<List<Item>>(DAPR_STORE_NAME, session, ConsistencyMode.Strong);
        }
     }
 }

@@ -6,6 +6,8 @@ spec:
   type: state.mongodb
   version: v1
   metadata:
+    - name: keyPrefix
+      value: appid
     - name: host
       value: localhost:27017
     - name: username
@@ -16,3 +18,5 @@ spec:
       value: admin 
     - name: collectionName
       value: cart 
+scopes:
+  - cart-service

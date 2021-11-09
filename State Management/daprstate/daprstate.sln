@@ -13,6 +13,8 @@ EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCart", "src\ShoppingCart\ShoppingCart.csproj", "{FD2D1249-D36D-4ABB-9D27-E4933D4B7974}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D3397034-83F6-42E4-83B5-61F2D8021068}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
