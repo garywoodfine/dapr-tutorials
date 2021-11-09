@@ -1,17 +1,17 @@
 PATCH http://localhost:5001/cart
 accept: text/plain
-x-session-id: 3E520260-2CB4-462A-BA04-C2F7CFAB1EFE
+x-session-id: 9E520260-2CB4-462A-BA04-C2F7CFAB1EFE
 Content-Type: application/json-patch+json
 
 [
   {
     "op": "replace",
-    "value": { "sku" : "abc-100", "quantity": 1 } ,
-    "path": "/-"
+    "value": { "sku" : "abc-100", "quantity": 2 , "amount": 20.98 } ,
+    "path": "/0"
   },
   {
     "op": "add",
-    "value": { "sku" : "abc-200", "quantity": 3 } ,
+    "value": { "sku" : "abc-200", "quantity": 3, "amount": 31.99 } ,
     "path": "/-"
   }
 ]

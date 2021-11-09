@@ -17,11 +17,7 @@ namespace ShoppingCart.Content.Activities.Cart.Post
         public async Task<Response> Handle(Command request, CancellationToken cancellationToken)
         {
             await _articleService.Save(request.Session, request.Items);
-            return await Task.FromResult(new Response
-            {
-               Id = Guid.NewGuid().ToString(),
-               Reference = request.Session
-            });
+            return new Response { Items = request.Items };
         }
     }
 }

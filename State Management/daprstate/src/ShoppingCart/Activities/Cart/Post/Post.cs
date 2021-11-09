@@ -27,16 +27,12 @@ namespace ShoppingCart.Content.Activities.Cart.Post
             OperationId = "4D730510-3399-4324-BB2D-0A6C7270F783",
             Tags = new[] {Routes.Cart})
         ]
-        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(Response))]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesErrorResponseType(typeof(NotFoundResult))]
-        [Produces("application/json")]
-        public async override Task<ActionResult> HandleAsync([FromRoute] Command request, CancellationToken cancellationToken = new CancellationToken())
+        [ProducesResponseType(StatusCodes.Status201Created)]
+       public async override Task<ActionResult> HandleAsync([FromRoute] Command request, CancellationToken cancellationToken = new CancellationToken())
         {
-            var response = await _mediator.Send(request, cancellationToken);
-            return new CreatedResult(
-                new Uri($"/{Routes.Cart}/{response.Id}", UriKind.Relative),
-                new {id = response.Reference});
+           var response=  await _mediator.Send(request, cancellationToken);
+             return new CreatedResult(
+                 new Uri($"/{Routes.Cart}/{request.Session}", UriKind.Relative), response);
         }
     }
 }

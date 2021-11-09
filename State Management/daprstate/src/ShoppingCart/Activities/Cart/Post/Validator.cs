@@ -6,8 +6,7 @@ namespace ShoppingCart.Content.Activities.Cart.Post
     {
         public Validator()
         {
-          
-
+            RuleFor(b => b.Session).NotNull().NotEmpty();
         }
     }
 }
