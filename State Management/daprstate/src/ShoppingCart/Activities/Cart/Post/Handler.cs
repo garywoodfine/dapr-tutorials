@@ -15,8 +15,7 @@ namespace ShoppingCart.Content.Activities.Cart.Post
         }
         public async Task<Response> Handle(Command request, CancellationToken cancellationToken)
         {
-           
-            return new Response
+           return new Response
             {
                 Exists =  await _cartService.Save(request.Session, request.Items, cancellationToken),
                 Items = request.Items
