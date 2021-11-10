@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using ShoppingCart.Resources;
 
 namespace ShoppingCart.Content.Exceptions
@@ -6,7 +7,7 @@ namespace ShoppingCart.Content.Exceptions
     [Serializable]
     public class NotFoundException : DaprStateException
     {
-        public NotFoundException(string title, string message) : base(ExceptionTitle.NotFound, message)
+        public NotFoundException( string message, IReadOnlyDictionary<string, string[]> errors) : base(ExceptionTitle.NotFound, message, errors)
         {
         }
     }

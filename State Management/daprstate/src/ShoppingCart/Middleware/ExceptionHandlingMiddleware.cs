@@ -62,11 +62,12 @@ namespace ShoppingCart.Content.Middleware
         {
             IReadOnlyDictionary<string, string[]> errors = null;
 
-            if (exception is ValidationException validationException)
+            if (exception is DaprStateException baseException)
             {
-                errors = validationException.Errors;
+                return baseException.Errors;
             }
-
+           
+            
             return errors;
         }
     }

@@ -17,7 +17,7 @@ namespace ShoppingCart.Activities.Cart.Patch
         
         public async Task<Response> Handle(Command request, CancellationToken cancellationToken)
         {
-            var items = await _cartStateService.Update(request.Session, request.Items);
+            var items = await _cartStateService.Update(request.Session, request.Items, cancellationToken);
             return await Task.FromResult(new Response
             {
                 Items = items

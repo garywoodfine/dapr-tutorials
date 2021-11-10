@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 using MediatR;
 using ShoppingCart.Content.Activities.Cart.Post;
 using ShoppingCart.Content.Activities.Cart.Post.Models;
+using ShoppingCart.Content.Exceptions;
 
-namespace ShoppingCart.Activities.Sample.Get
+namespace ShoppingCart.Activities.Cart.Get
 {
     public class Handler : IRequestHandler<Query, Response>
     {
@@ -19,7 +20,8 @@ namespace ShoppingCart.Activities.Sample.Get
         public async Task<Response> Handle(Query request, CancellationToken cancellationToken)
         {
 
-            var items = await _cartStateService.Get(request.Session);
+            var items = await _cartStateService.Get(request.Session, cancellationToken);
+         
             /// Your Logic Goes here 
             // This is only to supply an example and you should do whatever you need to achieve here
             return await Task.FromResult(new Response

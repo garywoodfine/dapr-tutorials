@@ -19,22 +19,28 @@ namespace ShoppingCart.Content.Activities.Cart.Post
         {
             _mediator = mediator;
         }
-        
+
         [HttpPost]
         [SwaggerOperation(
             Summary = "Create a shopping cart for a user",
             Description = "Create a shopping cart for a user",
             OperationId = "4D730510-3399-4324-BB2D-0A6C7270F783",
-            Tags = new[] {Routes.Cart})
+            Tags = new[] { Routes.Cart })
         ]
         [ProducesResponseType(StatusCodes.Status201Created)]
-       public async override Task<ActionResult> HandleAsync([FromRoute] Command request, CancellationToken cancellationToken = new CancellationToken())
+        [ProducesErrorResponseType(typeof(ConflictResult))]
+        public override async Task<ActionResult> HandleAsync([FromRoute] Command request,
+            CancellationToken cancellationToken = new CancellationToken())
         {
-           var response=  await _mediator.Send(request, cancellationToken);
-             return new CreatedResult(
-                 new Uri($"/{Routes.Cart}/{request.Session}", UriKind.Relative), response);
+            var response = await _mediator.Send(request, cancellationToken);
+
+            return response.Exists
+                ? new ConflictResult()
+                : new CreatedResult(
+                    new Uri($"/{Routes.Cart}/{request.Session}", UriKind.Relative), response.Items);
         }
     }
 }
+
 
 //dapr run --app-id "article-service" --app-port "5001" --dapr-grpc-port "50010" --dapr-http-port "5010" --components-path "./components" -- dotnet run --project ./ShoppingCart.csproj --urls="http://+:5001"

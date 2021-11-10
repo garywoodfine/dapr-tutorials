@@ -4,10 +4,9 @@ using Ardalis.ApiEndpoints;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ShoppingCart.Activities.Sample.Get;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace ShoppingCart.Activities.Cart
+namespace ShoppingCart.Activities.Cart.Get
 {
    [Route(Routes.Cart)]
     public class Get : BaseAsyncEndpoint.WithRequest<Query>.WithResponse<Response>

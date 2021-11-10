@@ -1,12 +1,12 @@
 ## Post Cart Item 
 POST http://{{host-url}}/cart
 accept: application/json
-x-session-id: {{create-session-id}}
+x-session-id: {{session-id}}
 Content-Type: application/json-patch+json
 
 [
   {
-    "sku": "abc-100",
+    "sku": "abc-104",
     "quantity": 2,
     "amount": 9.99
   }

@@ -15,8 +15,12 @@ namespace ShoppingCart.Content.Activities.Cart.Post
         }
         public async Task<Response> Handle(Command request, CancellationToken cancellationToken)
         {
-            await _cartService.Save(request.Session, request.Items);
-            return new Response { Items = request.Items };
+           
+            return new Response
+            {
+                Exists =  await _cartService.Save(request.Session, request.Items, cancellationToken),
+                Items = request.Items
+            };
         }
     }
 }

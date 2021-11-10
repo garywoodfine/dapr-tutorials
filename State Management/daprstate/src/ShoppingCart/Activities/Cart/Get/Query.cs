@@ -1,7 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ShoppingCart.Activities.Sample.Get
+namespace ShoppingCart.Activities.Cart.Get
 {
     public class Query : IRequest<Response>
     {
