@@ -4751,19 +4751,19 @@
     ]
   },
   "packageFolders": {
-    "/home/garyw/.nuget/packages/": {}
+    "/home/gary/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/garyw/code/dapr-tutorials/State Management/daprstate/src/ShoppingCart/ShoppingCart.csproj",
+      "projectUniqueName": "/home/gary/code/dapr-tutorials/State Management/daprstate/src/ShoppingCart/ShoppingCart.csproj",
       "projectName": "Threenine.DaprState",
-      "projectPath": "/home/garyw/code/dapr-tutorials/State Management/daprstate/src/ShoppingCart/ShoppingCart.csproj",
-      "packagesPath": "/home/garyw/.nuget/packages/",
-      "outputPath": "/home/garyw/code/dapr-tutorials/State Management/daprstate/src/ShoppingCart/obj/",
+      "projectPath": "/home/gary/code/dapr-tutorials/State Management/daprstate/src/ShoppingCart/ShoppingCart.csproj",
+      "packagesPath": "/home/gary/.nuget/packages/",
+      "outputPath": "/home/gary/code/dapr-tutorials/State Management/daprstate/src/ShoppingCart/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/garyw/.nuget/NuGet/NuGet.Config"
+        "/home/gary/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -4870,7 +4870,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/linuxbrew/.linuxbrew/Cellar/dotnet/5.0.207/libexec/sdk/5.0.207/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.301/RuntimeIdentifierGraph.json"
       }
     }
   }
